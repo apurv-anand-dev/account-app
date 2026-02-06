@@ -7,11 +7,11 @@ function Register() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // ✅ Redirect if user already logged in
+ 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("loggedInUser");
     if (loggedInUser) {
-      navigate("/dashboard"); // Already logged in, go to dashboard
+      navigate("/dashboard"); 
     }
   }, [navigate]);
 
@@ -23,11 +23,11 @@ function Register() {
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Check if email already exists
+    
     const existingUser = users.find((u) => u.email === email);
     if (existingUser) {
       alert("Email already registered! Redirecting to login...");
-      navigate("/login"); // Redirect to login
+      navigate("/login");
       return;
     }
 
